@@ -170,4 +170,4 @@ class ProductPricelistExportWiz(models.TransientModel):
         ]
 
         products = self.env["product.product"].search(domain)
-        return products
+        return products.with_context(lang=self.pricelist_lang.code)
